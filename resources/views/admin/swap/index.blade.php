@@ -23,12 +23,12 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="a">Variable A</label>
-                        <input type="number" name="a" class="form-control" id="a" value="{{ old('a') }}"
+                        <input type="text" name="a" class="form-control" id="a" value="{{ isset($a) ? $a : '' }}"
                             placeholder="Variable A">
                     </div>
                     <div class="form-group">
                         <label for="b">Variable B</label>
-                        <input type="number" name="b" class="form-control" id="b" value="{{ old('b') }}"
+                        <input type="text" name="b" class="form-control" id="b" value="{{ isset($b) ? $b : '' }}"
                             placeholder="Variable A">
                     </div>
                 </div>

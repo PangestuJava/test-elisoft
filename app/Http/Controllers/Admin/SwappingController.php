@@ -24,11 +24,6 @@ class SwappingController extends Controller
         $b = substr($a, 0, strlen($a) - strlen($b));
         $a = substr($a, strlen($b));
 
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Swapping successfully!!',
-            'a' => $a,
-            'b' => $b
-        ]);
+        return view('admin.swap.index', compact('a', 'b'));
     }
 }

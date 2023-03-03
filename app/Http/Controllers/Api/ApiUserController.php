@@ -19,9 +19,10 @@ class ApiUserController extends Controller
                 'data' => []
             ]);
         } else {
-            return UserResource::collection($users)->additional([
+            return response()->json([
                 'status' => true,
                 'message' => 'Success',
+                'data' => UserResource::collection($users)
             ]);
         }
     }
