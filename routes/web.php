@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\NumberedController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\ProductStockController;
+use App\Http\Controllers\Auth\ProviderController;
+use App\Http\Controllers\Admin\NumberedController;
 use App\Http\Controllers\Admin\SwappingController;
+use App\Http\Controllers\Admin\ProductStockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use App\Http\Controllers\Admin\SwappingController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
+Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback']);
 
 Route::middleware('auth', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
