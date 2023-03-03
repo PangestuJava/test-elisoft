@@ -2,7 +2,7 @@
 
 ### Download Project and Save Project in Locally
 
-### change the file named ".env.example" to ".env" and Email settings in ".env"
+### change the file named ".env.example" to ".env"
 
 ### Email settings and database in ".env"
 
@@ -20,10 +20,6 @@ Run the following command:
 
 ```bash
     php artisan migrate:fresh --seed
-```
-
-```bash
-    php artisan passport:install
 ```
 
 ```bash
