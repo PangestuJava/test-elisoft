@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="pages/calendar.html" class="nav-link">
+                <a href="{{ route('api.users') }}" class="nav-link">
                     <i class="nav-icon fas fa-inbox"></i>
                     <p>
                         API Users
