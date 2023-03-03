@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductStockController;
+use App\Http\Controllers\Admin\SwappingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::middleware('auth', 'verified')->group(function () {
 
     Route::resource('/users', UserController::class);
     Route::get('/product-stock', [ProductStockController::class, 'index'])->name('product');
+
+    Route::get('/swapping', [SwappingController::class, 'index'])->name('swapping');
+    Route::post('/swapping', [SwappingController::class, 'store'])->name('swapping.store');
 });
 
 require __DIR__ . '/auth.php';
