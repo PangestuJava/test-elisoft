@@ -5,7 +5,7 @@
             <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
     </div>
 
@@ -14,7 +14,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="{{ route('users.index') }}" class="nav-link">
+                <a href="{{ route('users.index') }}"
+                    class="nav-link {{ request()->segment(1) == 'users' ? 'active' : '' }}">
                     <i class="nav-icon fa fa-users"></i>
                     <p>
                         Management Users
@@ -25,7 +26,7 @@
                 <a href="{{ route('product') }}" class="nav-link">
                     <i class="nav-icon fas fa-barcode"></i>
                     <p>
-                        Products
+                        Products (json)
                     </p>
                 </a>
             </li>
@@ -33,23 +34,25 @@
                 <a href="{{ route('api.users') }}" class="nav-link">
                     <i class="nav-icon fas fa-inbox"></i>
                     <p>
-                        API Users
+                        API Users (json)
                     </p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('swapping') }}" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="{{ route('swapping') }}"
+                    class="nav-link {{ request()->segment(1) == 'swapping' ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-columns"></i>
                     <p>
                         Swapping Variable
                     </p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="pages/calendar.html" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <a href="{{ route('numbered') }}"
+                    class="nav-link {{ request()->segment(1) == 'number-to-word' ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-th"></i>
                     <p>
-                        Numbers
+                        Numbered
                     </p>
                 </a>
             </li>
@@ -59,9 +62,9 @@
                     @csrf
                     <a href="{{ route('logout') }}" class="nav-link"
                         onclick=" event.preventDefault(); this.closest('form').submit();">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-loging"></i>
                         <p>
-                            Numbers
+                            Logout
                         </p>
                     </a>
                 </form>

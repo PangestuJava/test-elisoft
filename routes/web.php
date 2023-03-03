@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\NumberedController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
@@ -27,6 +28,9 @@ Route::middleware('auth', 'verified')->group(function () {
 
     Route::get('/swapping', [SwappingController::class, 'index'])->name('swapping');
     Route::post('/swapping', [SwappingController::class, 'store'])->name('swapping.store');
+
+    Route::get('/number-to-word', [NumberedController::class, 'index'])->name('numbered');
+    Route::post('/number-to-word', [NumberedController::class, 'convert'])->name('numbered.convert');
 });
 
 require __DIR__ . '/auth.php';

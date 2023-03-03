@@ -6,30 +6,22 @@
     <div class="col-md-12">
         <!-- jquery validation -->
         <div class="card card-primary">
-            @isset($a, $b)
+            @isset($word)
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <ul>
                     <li>
-                        <strong>Variable A= {{ $a }}</strong>
-                    </li>
-                    <li>
-                        <strong>Variable B= {{ $b }}</strong>
+                        <strong>{{ $word }}</strong>
                     </li>
                 </ul>
             </div>
             @endisset
             <!-- form start -->
-            <form action="{{ route('swapping.store') }}" method="POST">
+            <form action="{{ route('numbered.convert') }}" method="POST">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="a">Variable A</label>
-                        <input type="text" name="a" class="form-control" id="a" value="{{ old('a') }}"
-                            placeholder="Variable A" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="b">Variable B</label>
-                        <input type="text" name="b" class="form-control" id="b" value="{{ old('a') }}"
+                        <label for="a">Number</label>
+                        <input type="number" name="number" class="form-control" id="number" value="{{ old('number') }}"
                             placeholder="Variable A" required>
                     </div>
                 </div>
