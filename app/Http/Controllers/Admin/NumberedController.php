@@ -60,7 +60,7 @@ class NumberedController extends Controller
         } elseif ($number < 1000000000000000) {
             return $this->numberToWord(floor($number / 1000000000000)) . ' Trilyun ' . $this->numberToWord($number % 1000000000000);
         } else {
-            return 'Maaf, number terlalu besar';
+            return 'Sorry, number is too big';
         }
     }
 }

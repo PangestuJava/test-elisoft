@@ -67,17 +67,6 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -102,10 +91,7 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         // update user data
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-        ]);
+        $user->update($request->all());
         // flash data
         return redirect()->to('/users')->with([
             'status' => 'success',

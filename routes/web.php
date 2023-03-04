@@ -28,6 +28,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/users', UserController::class);
+
     Route::get('/product-stock', [ProductStockController::class, 'index'])->name('product');
 
     Route::get('/swapping', [SwappingController::class, 'index'])->name('swapping');

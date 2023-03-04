@@ -24,13 +24,11 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="a">Variable A</label>
-                        <input type="text" name="a" class="form-control" id="a" value="{{ old('a') }}"
-                            placeholder="Variable A" required>
+                        <input type="text" name="a" class="form-control" id="a" placeholder="Variable A" required>
                     </div>
                     <div class="form-group">
                         <label for="b">Variable B</label>
-                        <input type="text" name="b" class="form-control" id="b" value="{{ old('a') }}"
-                            placeholder="Variable A" required>
+                        <input type="text" name="b" class="form-control" id="b" placeholder="Variable A" required>
                     </div>
                 </div>
                 <!-- /.card-body -->

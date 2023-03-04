@@ -19,7 +19,6 @@ class ProviderController extends Controller
     {
         $socialUser = Socialite::driver($provider)->user();
         $user = User::where('email', '=', $socialUser->email)->first();
-
         if ($user) {
             Auth::login($user);
             return redirect()->intended(RouteServiceProvider::HOME);
