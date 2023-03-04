@@ -26,7 +26,7 @@ Run the following command:
     php artisan serve
 ```
 
-### Username & Password Role (Admin)
+### Username & Password
 
 -   email: admin@gmail.com
 -   password: password
